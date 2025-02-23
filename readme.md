@@ -24,12 +24,12 @@ Bu projeyi local ortamınızda çalıştırmak için aşağıdaki adımları izl
 
 1. Repoyu klonlayın:
    ```
-   git clone https://github.com/your-username/cosmic-explorer-portfolio.git
+   git clone https://github.com/busenurcetin/portfolio.git
    ```
 
 2. Proje dizinine gidin:
    ```
-   cd cosmic-explorer-portfolio
+   cd portfolio
    ```
 
 3. Bağımlılıkları yükleyin:

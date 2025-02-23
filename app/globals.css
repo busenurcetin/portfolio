@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --space-dark: #0a0b1e;
+  --space-dark-blue: #1a1b3a;
+  --space-light: #e1e7ff;
+  --space-light-muted: #a9b5e0;
+  --space-accent: #7b68ee;
+  --space-accent-hover: #6a5acd;
+}
+
+body {
+  color: var(--space-light);
+  background-color: var(--space-dark);
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: zoom 10s infinite;
+  opacity: 0.3;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@layer components {
+  .prose-space {
+    --tw-prose-body: var(--space-light);
+    --tw-prose-headings: var(--space-accent);
+    --tw-prose-links: var(--space-accent);
+    --tw-prose-bold: var(--space-light);
+    --tw-prose-counters: var(--space-light-muted);
+    --tw-prose-bullets: var(--space-light-muted);
+    --tw-prose-hr: var(--space-light-muted);
+    --tw-prose-quotes: var(--space-light);
+    --tw-prose-quote-borders: var(--space-accent);
+    --tw-prose-captions: var(--space-light-muted);
+    --tw-prose-code: var(--space-light);
+    --tw-prose-pre-code: var(--space-light);
+    --tw-prose-pre-bg: var(--space-dark-blue);
+    --tw-prose-th-borders: var(--space-light-muted);
+    --tw-prose-td-borders: var(--space-light-muted);
+  }
+
+  .blog-post-card {
+    @apply bg-space-dark-blue p-6 rounded-lg shadow-lg hover:shadow-space-accent transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .blog-post-title {
+    @apply text-2xl font-semibold mb-3 text-space-light hover:text-space-accent transition-colors;
+  }
+
+  .blog-post-date {
+    @apply text-space-light-muted mb-4 flex items-center;
+  }
+
+  .blog-post-excerpt {
+    @apply text-space-light mb-4;
+  }
+
+  .blog-post-link {
+    @apply inline-flex items-center text-space-accent hover:text-space-accent-hover transition-colors;
+  }
+
+  .blog-post-link-icon {
+    @apply ml-1 transition-transform;
+  }
+}
+
